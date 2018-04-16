@@ -3,9 +3,10 @@ package test2;
 public class TestClass {
 	public static void main(String[] args) {
 
-		for (int i = 1; i <= 100; i++) {
-			if (i%3 == 0)
-				System.out.println(i);
+		int[] a = new int[101];
+		for (int i = 0; i <= 101; i++) {
+			a[i] = 101 - i;
+			System.out.println(i);
 
 		}
 
