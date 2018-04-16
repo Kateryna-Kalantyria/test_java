@@ -2,18 +2,28 @@ package test2;
 
 public class TestClass {
 	public static void main(String[] args) {
-
-		int[] x = new int[28];
-
-		for (int i = 0; i < x.length; i++) {
-			x[i] = i * 635;
-			
-			System.out.println(x[0]);
-			System.out.println(x[14]);
-			System.out.println(x[27]);
-			
+		
+		for (int i = 10; i <= 20; i++) {
+			System.out.println(i);
 		}
-
+		System.out.println();
+		int i =10;
+		while (i <= 20) {
+			System.out.println(i++);
+		}
+		System.out.println();
+		i = 10;
+		do {
+			System.out.println(i++);
+		}while (i<=20);
+		    System.out.println();
+		int[] arr = {10,11,12,13,14,15,16,17,18,19,20};
+		for (int x : arr)
+			System.out.println(x);
+			
+			
+		
+		
 	}
 
 }
