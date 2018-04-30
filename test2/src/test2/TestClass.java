@@ -1,22 +1,30 @@
 package test2;
 
-import java.util.Random;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
 
-public class TestClass {
+public class MainClass {
 	public static void main(String[] args) {
 
-		int[] a = new int[10];
-		Random r = new Random();
+		Scanner sc = new Scanner(System.in);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		System.out.println("Enter the date: ");
+		String dtStr = sc.nextLine();
 
-		for (int i = 0; i < a.length; i++)
-			a[i] = r.nextInt();
+		try {
+			Date dt = sdf.parse(dtStr);
+			System.out.println(dt);
+			
+			Date currDate = new Date(System.currentTimeMillis());
+			System.out.println(currDate);
+			System.out.println(dt.compareTo(currDate));
 
-		int sum = 0;
-		for (int i = 1; i < a.length - 1; i++) {
-			sum += a[i];
+		} catch (ParseException e) {
+			System.out.println("Wrong date");
 		}
-
-		System.out.println("Сумма всех элементов массива, кроме первого и последнего  = " + sum);
 
 	}
 
