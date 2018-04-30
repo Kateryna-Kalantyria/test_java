@@ -1,31 +1,31 @@
 package test2;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Scanner;
+import java.util.Arrays;
 
-public class MainClass {
+public class TestClass {
+
+	static boolean equals(short[] a1, short[] a2) {
+
+		if (a1.length != a2.length)
+			return false;
+
+		for (int i = 0; i < a1.length; i++) {
+			if (a1[i] != a2[i])
+				return false;
+		}
+		return true;
+	}
+
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		System.out.println("Enter the date: ");
-		String dtStr = sc.nextLine();
+		short[] a1 = { 1, 2, 3, 4 };
+		short[] a2 = { 1, 2, 3, 4 };
+		short[] a3 = { 1, 3, 6, 7, 8 };
+		short[] a4 = { 1, 7, 1 };
 
-		try {
-			Date dt = sdf.parse(dtStr);
-			System.out.println(dt);
-			
-			Date currDate = new Date(System.currentTimeMillis());
-			System.out.println(currDate);
-			System.out.println(dt.compareTo(currDate));
-
-		} catch (ParseException e) {
-			System.out.println("Wrong date");
-		}
-
+		System.out.println(equals(a1, a2));
+		System.out.println(equals(a2, a3));
+		System.out.println(equals(a1,a4));
 	}
 
 }
